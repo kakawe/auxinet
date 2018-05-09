@@ -3,9 +3,12 @@ package com.vpfc18.vpfc18.Principal.Perfil;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.CheckBox;
 
 import com.vpfc18.vpfc18.R;
 
@@ -14,7 +17,10 @@ import com.vpfc18.vpfc18.R;
  */
 public class Perfil_Fragment_2 extends Fragment {
 
+    CheckBox cbx_tipoayuda_ayuda1,cbx_tipoayuda_ayuda2,cbx_tipoayuda_ayuda3,cbx_tipoayuda_ayuda4,cbx_tipoayuda_ayuda5;
+    Button btn_tipoayuda_guardar;
 
+    String ayuda1,ayuda2,ayuda3,ayuda4,ayuda5;
     public Perfil_Fragment_2() {
         // Required empty public constructor
     }
@@ -24,7 +30,30 @@ public class Perfil_Fragment_2 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View vista = inflater.inflate(R.layout.fragment_perfil_2, container, false);
+        cbx_tipoayuda_ayuda1 = (CheckBox)vista.findViewById(R.id.cbx_tipoayuda_ayuda1);
+        cbx_tipoayuda_ayuda2 = (CheckBox)vista.findViewById(R.id.cbx_tipoayuda_ayuda2);
+        cbx_tipoayuda_ayuda3 = (CheckBox)vista.findViewById(R.id.cbx_tipoayuda_ayuda3);
+        cbx_tipoayuda_ayuda4 = (CheckBox)vista.findViewById(R.id.cbx_tipoayuda_ayuda4);
+        cbx_tipoayuda_ayuda5 = (CheckBox)vista.findViewById(R.id.cbx_tipoayuda_ayuda5);
+        btn_tipoayuda_guardar = (Button) vista.findViewById(R.id.btn_tipoayuda_guardar);
+
+        btn_tipoayuda_guardar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                actualizarDatos();
+            }
+        });
         return vista;
+    }
+
+    private void actualizarDatos(){
+        if (cbx_tipoayuda_ayuda1.isChecked()){
+            Log.v("Datos","dentro");
+        }else{
+            Log.d("Datos", "fuera");
+        }
+
+
     }
 
 }

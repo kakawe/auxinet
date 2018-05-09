@@ -4,6 +4,7 @@ package com.vpfc18.vpfc18.Principal.Perfil;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.util.Log;
 import android.util.Patterns;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -24,8 +25,7 @@ public class Perfil_Fragment_1 extends Fragment {
     EditText et_perfil_email,et_perfil_contrasena,et_perfil_telefono,et_perfil_nombre,et_perfil_apellido;
     Button btn_perfil_guardar;
 
-    String email,contrasena,nombre,apellido;
-    int telefono;
+    String email,contrasena,nombre,apellido,telefono;
     public Perfil_Fragment_1() {
         // Required empty public constructor
     }
@@ -59,16 +59,29 @@ public class Perfil_Fragment_1 extends Fragment {
     private boolean comprobarCampos(){
         email = et_perfil_email.getText().toString().trim();
         contrasena = et_perfil_contrasena.getText().toString();
-        telefono = Integer.parseInt(et_perfil_telefono.getText().toString());
+        telefono = et_perfil_telefono.getText().toString();
         nombre = et_perfil_nombre.getText().toString();
         apellido = et_perfil_apellido.getText().toString();
 
         if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
-            String a= "No puedes dejar el campo correo vacio";
+            String a= "Escribe un correo válido";
             Toast.makeText(getContext(), a, Toast.LENGTH_LONG).show();
             et_perfil_email.requestFocus();
             return false;
         }
+        if (contrasena.isEmpty()){
+            String a= "No puedes dejar el campo contraseña vacio";
+            Toast.makeText(getContext(), a, Toast.LENGTH_LONG).show();
+            et_perfil_contrasena.requestFocus();
+            return false;
+        }
+        if (telefono.isEmpty()){
+            String a= "No puedes dejar el campo teléfono vacio";
+            Toast.makeText(getContext(), a, Toast.LENGTH_LONG).show();
+            et_perfil_contrasena.requestFocus();
+            return false;
+        }
+
         return true;
     }
 }

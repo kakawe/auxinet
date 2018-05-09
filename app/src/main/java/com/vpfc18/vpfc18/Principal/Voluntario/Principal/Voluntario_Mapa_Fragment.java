@@ -1,4 +1,4 @@
-package com.vpfc18.vpfc18.Principal;
+package com.vpfc18.vpfc18.Principal.Voluntario.Principal;
 
 
 import android.os.Bundle;
@@ -13,10 +13,10 @@ import com.vpfc18.vpfc18.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class Mapa_Fragment extends Fragment {
+public class Voluntario_Mapa_Fragment extends Fragment {
 
 
-    public Mapa_Fragment() {
+    public Voluntario_Mapa_Fragment() {
         // Required empty public constructor
     }
 
@@ -25,7 +25,7 @@ public class Mapa_Fragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_mapa_, container, false);
+        return inflater.inflate(R.layout.voluntario_fragment_mapa_, container, false);
     }
 
 }

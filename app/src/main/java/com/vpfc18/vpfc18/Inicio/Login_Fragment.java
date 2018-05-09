@@ -13,9 +13,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.android.volley.RequestQueue;
-import com.android.volley.toolbox.Volley;
-import com.vpfc18.vpfc18.Principal.Principal_Activity;
+import com.vpfc18.vpfc18.Base_de_datos.RegistrarUsuario;
+import com.vpfc18.vpfc18.Principal.Voluntario.Principal.Voluntario_Principal_Activity;
 import com.vpfc18.vpfc18.R;
 
 
@@ -30,7 +29,6 @@ public class Login_Fragment extends Fragment {
 
     String correo, contrasena;
 
-    private RequestQueue peticion;
     public Login_Fragment() {
         // Required empty public constructor
     }
@@ -39,7 +37,6 @@ public class Login_Fragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        peticion = Volley.newRequestQueue(getContext());
 
         View vista = inflater.inflate(R.layout.fragment_login_, container, false);
         et_login_correo= (EditText) vista.findViewById(R.id.et_login_correo);
@@ -80,10 +77,11 @@ public class Login_Fragment extends Fragment {
     }
 
     private void loguearUsuario(){
+
     }
 
     private void cargaPrincipal(){
-        Intent intent = new Intent(getContext(), Principal_Activity.class);
+        Intent intent = new Intent(getContext(), Voluntario_Principal_Activity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);

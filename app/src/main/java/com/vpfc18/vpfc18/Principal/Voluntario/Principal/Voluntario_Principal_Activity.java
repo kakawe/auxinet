@@ -1,4 +1,4 @@
-package com.vpfc18.vpfc18.Principal;
+package com.vpfc18.vpfc18.Principal.Voluntario.Principal;
 
 import android.annotation.SuppressLint;
 import android.graphics.drawable.Drawable;
@@ -13,26 +13,25 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 
-import com.vpfc18.vpfc18.Principal.Perfil.Perfil_Fragment;
+import com.vpfc18.vpfc18.Principal.Voluntario.Perfil.Voluntario_Perfil_Fragment;
 import com.vpfc18.vpfc18.R;
 
-public class Principal_Activity extends AppCompatActivity {
+public class Voluntario_Principal_Activity extends AppCompatActivity {
 
-    android.support.v7.widget.Toolbar principal_toolbar;
-    Drawable icono;
+    android.support.v7.widget.Toolbar voluntario_principal_toolbar;
     int contador=0;
     int perfil = 0;
     @SuppressLint("NewApi")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_principal);
+        setContentView(R.layout.voluntario_activity_principal);
 
-        principal_toolbar =(android.support.v7.widget.Toolbar) findViewById(R.id.principal_toolbar);
-        setSupportActionBar(principal_toolbar);
-        principal_toolbar.setNavigationIcon(R.drawable.ic_perfil);
+        voluntario_principal_toolbar =(android.support.v7.widget.Toolbar) findViewById(R.id.voluntario_principal_toolbar);
+        setSupportActionBar(voluntario_principal_toolbar);
+        voluntario_principal_toolbar.setNavigationIcon(R.drawable.ic_perfil);
         cargaMapa();
-        principal_toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+        voluntario_principal_toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (perfil==0){
@@ -79,32 +78,32 @@ public class Principal_Activity extends AppCompatActivity {
 
     private void cargaMapa(){
         perfil=0;
-        principal_toolbar.setNavigationIcon(R.drawable.ic_perfil);
+        voluntario_principal_toolbar.setNavigationIcon(R.drawable.ic_perfil);
         getSupportActionBar().setTitle("Mapa eventos");
-        Fragment fragmentoSeleccionado = new Mapa_Fragment();
+        Fragment fragmentoSeleccionado = new Voluntario_Mapa_Fragment();
         FragmentManager fm = getSupportFragmentManager();
         FragmentTransaction t = fm.beginTransaction();
-        t.replace(R.id.contenedor_principal, fragmentoSeleccionado);
+        t.replace(R.id.voluntario_contenedor_principal, fragmentoSeleccionado);
         t.commit();
     }
     private void cargaLista(){
         perfil=0;
-        principal_toolbar.setNavigationIcon(R.drawable.ic_perfil);
+        voluntario_principal_toolbar.setNavigationIcon(R.drawable.ic_perfil);
         getSupportActionBar().setTitle("Listado eventos");
-        Fragment fragmentoSeleccionado = new Listado_Fragment();
+        Fragment fragmentoSeleccionado = new Voluntario_Listado_Fragment();
         FragmentManager fm = getSupportFragmentManager();
         FragmentTransaction t = fm.beginTransaction();
-        t.replace(R.id.contenedor_principal, fragmentoSeleccionado);
+        t.replace(R.id.voluntario_contenedor_principal, fragmentoSeleccionado);
         t.commit();
     }
     private void cargaPerfil(){
         perfil=1;
-        principal_toolbar.setNavigationIcon(R.drawable.ic_vacio);
+        voluntario_principal_toolbar.setNavigationIcon(R.drawable.ic_vacio);
         getSupportActionBar().setTitle("Perfil Usuario");
-        Fragment fragmentoSeleccionado = new Perfil_Fragment();
+        Fragment fragmentoSeleccionado = new Voluntario_Perfil_Fragment();
         FragmentManager fm = getSupportFragmentManager();
         FragmentTransaction t = fm.beginTransaction();
-        t.replace(R.id.contenedor_principal, fragmentoSeleccionado);
+        t.replace(R.id.voluntario_contenedor_principal, fragmentoSeleccionado);
         t.commit();
     }
 }

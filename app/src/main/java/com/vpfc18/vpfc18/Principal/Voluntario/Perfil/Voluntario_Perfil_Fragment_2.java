@@ -1,4 +1,4 @@
-package com.vpfc18.vpfc18.Principal.Perfil;
+package com.vpfc18.vpfc18.Principal.Voluntario.Perfil;
 
 
 import android.os.Bundle;
@@ -15,13 +15,13 @@ import com.vpfc18.vpfc18.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class Perfil_Fragment_2 extends Fragment {
+public class Voluntario_Perfil_Fragment_2 extends Fragment {
 
     CheckBox cbx_tipoayuda_ayuda1,cbx_tipoayuda_ayuda2,cbx_tipoayuda_ayuda3,cbx_tipoayuda_ayuda4,cbx_tipoayuda_ayuda5;
     Button btn_tipoayuda_guardar;
 
     String ayuda1,ayuda2,ayuda3,ayuda4,ayuda5;
-    public Perfil_Fragment_2() {
+    public Voluntario_Perfil_Fragment_2() {
         // Required empty public constructor
     }
 
@@ -29,7 +29,7 @@ public class Perfil_Fragment_2 extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View vista = inflater.inflate(R.layout.fragment_perfil_2, container, false);
+        View vista = inflater.inflate(R.layout.voluntario_fragment_perfil_2, container, false);
         cbx_tipoayuda_ayuda1 = (CheckBox)vista.findViewById(R.id.cbx_tipoayuda_ayuda1);
         cbx_tipoayuda_ayuda2 = (CheckBox)vista.findViewById(R.id.cbx_tipoayuda_ayuda2);
         cbx_tipoayuda_ayuda3 = (CheckBox)vista.findViewById(R.id.cbx_tipoayuda_ayuda3);

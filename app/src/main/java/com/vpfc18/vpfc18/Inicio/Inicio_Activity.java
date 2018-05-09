@@ -7,11 +7,13 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.vpfc18.vpfc18.Base_de_datos.RegistrarUsuario;
 import com.vpfc18.vpfc18.R;
 
 public class Inicio_Activity extends AppCompatActivity {
 
     TabLayout tab_selector;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,7 +27,7 @@ public class Inicio_Activity extends AppCompatActivity {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 if (tab.getPosition()== 0){
-                    cargaLogin();
+                    conectar();
                 }else{
                     cargaRegistro();
                 }
@@ -44,6 +46,10 @@ public class Inicio_Activity extends AppCompatActivity {
 
     }
 
+    private void conectar(){
+
+
+    }
     private void cargaLogin(){
         Fragment fragmentoSeleccionado2 = new Login_Fragment();
         FragmentManager fm2 = getSupportFragmentManager();

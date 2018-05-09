@@ -1,4 +1,4 @@
-package com.vpfc18.vpfc18.Principal.Perfil;
+package com.vpfc18.vpfc18.Principal.Voluntario.Perfil;
 
 
 import android.os.Bundle;
@@ -14,11 +14,11 @@ import com.vpfc18.vpfc18.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class Perfil_Fragment extends Fragment {
+public class Voluntario_Perfil_Fragment extends Fragment {
 
     TabLayout tab_selector_perfil;
 
-    public Perfil_Fragment() {
+    public Voluntario_Perfil_Fragment() {
         // Required empty public constructor
     }
 
@@ -26,7 +26,7 @@ public class Perfil_Fragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View vista = inflater.inflate(R.layout.fragment_perfil, container, false);
+        View vista = inflater.inflate(R.layout.voluntario_fragment_perfil, container, false);
         tab_selector_perfil = (TabLayout)vista.findViewById(R.id.tab_selector_perfil);
         vistaPerfil();
 
@@ -50,13 +50,13 @@ public class Perfil_Fragment extends Fragment {
     }
 
     private void vistaPerfil() {
-        Fragment fragmentoSeleccionado = new Perfil_Fragment_1();
+        Fragment fragmentoSeleccionado = new Voluntario_Perfil_Fragment_1();
         FragmentTransaction t = getFragmentManager().beginTransaction();
         t.replace(R.id.contenedor_perfil, fragmentoSeleccionado);
         t.commit();
     }
     private void vistaAyudas(){
-        Fragment fragmentoSeleccionado = new Perfil_Fragment_2();
+        Fragment fragmentoSeleccionado = new Voluntario_Perfil_Fragment_2();
         FragmentTransaction t = getFragmentManager().beginTransaction();
         t.replace(R.id.contenedor_perfil, fragmentoSeleccionado);
         t.commit();

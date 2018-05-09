@@ -4,11 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Principal.Principal_Activity"
+    tools:context=".Principal.Voluntario.Principal.Voluntario_Principal_Activity"
     android:orientation="vertical">
 
     <android.support.v7.widget.Toolbar
-        android:id="@+id/principal_toolbar"
+        android:id="@+id/voluntario_principal_toolbar"
         android:layout_width="match_parent"
         android:layout_height="55dp"
         android:background="@color/colorNaranja"
@@ -17,7 +17,7 @@
         app:titleTextColor="#FFFFFF" />
 
     <LinearLayout
-        android:id="@+id/contenedor_principal"
+        android:id="@+id/voluntario_contenedor_principal"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"></LinearLayout>

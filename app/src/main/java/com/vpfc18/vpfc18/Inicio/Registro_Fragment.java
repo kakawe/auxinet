@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.vpfc18.vpfc18.Base_de_datos.RegistrarUsuario;
 import com.vpfc18.vpfc18.R;
 
 
@@ -43,6 +44,9 @@ public class Registro_Fragment extends Fragment {
             @Override
             public void onClick(View v) {
                 if (comprobarCampos()){
+                    RegistrarUsuario registrar = new RegistrarUsuario();
+                    registrar.execute("http://37.187.198.145/llamas/registro.php?nombres="+et_registro_nombre.getText().toString()+"&tel="+et_registro_telefono.getText().toString());
+
                 }
             }
         });

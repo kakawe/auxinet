@@ -7,7 +7,6 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import com.vpfc18.vpfc18.Base_de_datos.RegistrarUsuario;
 import com.vpfc18.vpfc18.R;
 
 public class Inicio_Activity extends AppCompatActivity {
@@ -27,6 +26,7 @@ public class Inicio_Activity extends AppCompatActivity {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 if (tab.getPosition()== 0){
+                    cargaLogin();
                     conectar();
                 }else{
                     cargaRegistro();
@@ -46,6 +46,7 @@ public class Inicio_Activity extends AppCompatActivity {
 
     }
 
+    //Codigo par ala conexión con la BBDD
     private void conectar(){
 
 
@@ -59,7 +60,7 @@ public class Inicio_Activity extends AppCompatActivity {
     }
 
     private void cargaRegistro(){
-        Fragment fragmentoSeleccionado2 = new Registro_Fragment();
+        Fragment fragmentoSeleccionado2 = new Registro_Fragment_1();
         FragmentManager fm2 = getSupportFragmentManager();
         FragmentTransaction t2 = fm2.beginTransaction();
         t2.replace(R.id.contenedor_Inicio, fragmentoSeleccionado2);

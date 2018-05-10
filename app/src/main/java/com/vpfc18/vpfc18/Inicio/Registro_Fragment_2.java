@@ -18,22 +18,20 @@ import com.vpfc18.vpfc18.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class Registro_Fragment extends Fragment {
+public class Registro_Fragment_2 extends Fragment {
 
     EditText et_registro_nombre,et_registro_correo,et_registro_contrasena,et_registro_telefono;
     Button btn_registro_registrar;
 
     String correo,contrasena,nombre;
-    int telefono;
-    public Registro_Fragment() {
+    public Registro_Fragment_2() {
         // Required empty public constructor
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View vista = inflater.inflate(R.layout.fragment_registro_, container, false);
+        View vista = inflater.inflate(R.layout.fragment_registro_2, container, false);
         et_registro_nombre = (EditText)vista.findViewById(R.id.et_registro_nombre);
         et_registro_correo = (EditText)vista.findViewById(R.id.et_registro_correo);
         et_registro_contrasena = (EditText)vista.findViewById(R.id.et_registro_contrasena);

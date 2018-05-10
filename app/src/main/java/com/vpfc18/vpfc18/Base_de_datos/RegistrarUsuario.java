@@ -17,8 +17,8 @@ import java.net.URL;
 public class RegistrarUsuario extends AsyncTask<String, Void, String> {
 
     @Override
-protected String doInBackground(String... urls) {
-    Log.v("Datos","Entro2");
+    protected String doInBackground(String... urls) {
+        Log.v("Datos1",urls.toString());
 
     // params comes from the execute() call: params[0] is the url.
     try {
@@ -30,17 +30,15 @@ protected String doInBackground(String... urls) {
     // onPostExecute displays the results of the AsyncTask.
     @Override
     protected void onPostExecute(String result) {
-        Log.v("Datos","Entro3");
-        //Toast.makeText(Inicio_Activity(), "Se almacenaron los datos correctamente", Toast.LENGTH_LONG).show();
-
+        Log.v("Datos2",result.toString());
     }
 
     /*
-    coge la url que ingresemos crea un imputs , comvierte la url en un object URL
+    coge la url que ingresemos crea un imputs , convierte la url en un object URL
     crea conexion http
      */
     private String downloadUrl(String myurl) throws IOException {
-        Log.i("URL",""+myurl);
+        Log.i("Datos3",""+myurl);
         myurl = myurl.replace(" ","%20");
         InputStream is = null;
         // Only display the first 500 characters of the retrieved
@@ -56,12 +54,14 @@ protected String doInBackground(String... urls) {
             conn.setDoInput(true);
             // Starts the query
             conn.connect();
+            //Devuelve un código de respuesta para indicar el estado de la conexión
             int response = conn.getResponseCode();
-            Log.d("respuesta", "The response is: " + response);
+            Log.d("Datos4", "The response is: " + response);
             is = conn.getInputStream();
 
             // Convert the InputStream into a string
             String contentAsString = readIt(is, len);
+            Log.v("Datos5",contentAsString);
             return contentAsString;
 
             // Makes sure that the InputStream is closed after the app is
@@ -72,13 +72,13 @@ protected String doInBackground(String... urls) {
             }
         }
     }
-
     // convierte loa inputS a string
     public String readIt(InputStream stream, int len) throws IOException, UnsupportedEncodingException {
         Reader reader = null;
         reader = new InputStreamReader(stream, "UTF-8");
         char[] buffer = new char[len];
         reader.read(buffer);
+        Log.v("Datos6",buffer.toString());
         return new String(buffer);
     }
 }

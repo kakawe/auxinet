@@ -6,7 +6,7 @@
     android:focusable="true"
     android:focusableInTouchMode="true"
     android:orientation="vertical"
-    tools:context=".Inicio.Registro_Fragment"
+    tools:context=".Inicio.Registro_Fragment_2"
     android:gravity="center">
 
     <EditText

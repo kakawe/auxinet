@@ -50,7 +50,6 @@ public class Registro_Fragment_2 extends Fragment {
         });
         return vista;
     }
-
     private boolean comprobarCampos(){
         correo = et_registro_correo.getText().toString().trim();
         contrasena = et_registro_contrasena.getText().toString();

@@ -128,5 +128,5 @@
         android:id="@+id/btn_perfil_guardar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Guardar" />
+        android:text="Actualizar datos" />
 </LinearLayout>

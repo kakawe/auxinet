@@ -16,7 +16,7 @@ import com.vpfc18.vpfc18.R;
  */
 public class Voluntario_Perfil_Fragment extends Fragment {
 
-    TabLayout tab_selector_perfil;
+    TabLayout tab_selector_perfil_voluntario;
 
     public Voluntario_Perfil_Fragment() {
         // Required empty public constructor
@@ -27,10 +27,10 @@ public class Voluntario_Perfil_Fragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View vista = inflater.inflate(R.layout.voluntario_fragment_perfil, container, false);
-        tab_selector_perfil = (TabLayout)vista.findViewById(R.id.tab_selector_perfil);
+        tab_selector_perfil_voluntario = (TabLayout)vista.findViewById(R.id.tab_selector_perfil_voluntario);
         vistaPerfil();
 
-        tab_selector_perfil.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+        tab_selector_perfil_voluntario.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 if (tab.getPosition()== 0){
@@ -52,13 +52,13 @@ public class Voluntario_Perfil_Fragment extends Fragment {
     private void vistaPerfil() {
         Fragment fragmentoSeleccionado = new Voluntario_Perfil_Fragment_1();
         FragmentTransaction t = getFragmentManager().beginTransaction();
-        t.replace(R.id.contenedor_perfil, fragmentoSeleccionado);
+        t.replace(R.id.contenedor_perfil_voluntario, fragmentoSeleccionado);
         t.commit();
     }
     private void vistaAyudas(){
         Fragment fragmentoSeleccionado = new Voluntario_Perfil_Fragment_2();
         FragmentTransaction t = getFragmentManager().beginTransaction();
-        t.replace(R.id.contenedor_perfil, fragmentoSeleccionado);
+        t.replace(R.id.contenedor_perfil_voluntario, fragmentoSeleccionado);
         t.commit();
     }
 

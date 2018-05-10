@@ -59,17 +59,12 @@ public class Voluntario_Principal_Activity extends AppCompatActivity {
                     contador=1;
                     item.setIcon(R.drawable.ic_map);
                     cargaLista();
-
-                    Log.v("clic12",String.valueOf(contador));
                 }else{
-                    Log.v("clic21",String.valueOf(item.getGroupId()));
                     contador=0;
                     item.setIcon(R.drawable.ic_notificacion);
                     cargaMapa();
 
-                    Log.v("clic22",String.valueOf(contador));
                 }
-                Log.v("clicfuera",String.valueOf(contador));
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

@@ -14,6 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.vpfc18.vpfc18.Base_de_datos.RegistrarUsuario;
+import com.vpfc18.vpfc18.Principal.Asistido.Principal.Asistido_Principal_Activity;
 import com.vpfc18.vpfc18.Principal.Voluntario.Principal.Voluntario_Principal_Activity;
 import com.vpfc18.vpfc18.R;
 
@@ -47,6 +48,8 @@ public class Login_Fragment extends Fragment {
         btn_login_entrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //apaño para no estar comprobando campos todo el rato
+                cargaPrincipal();
                 if (comprobarCampos()){
                     cargaPrincipal();
                 }else{
@@ -81,7 +84,7 @@ public class Login_Fragment extends Fragment {
     }
 
     private void cargaPrincipal(){
-        Intent intent = new Intent(getContext(), Voluntario_Principal_Activity.class);
+        Intent intent = new Intent(getContext(), Asistido_Principal_Activity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
